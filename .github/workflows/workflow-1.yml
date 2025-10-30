@@ -1,0 +1,21 @@
+name: Main Workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      input1:
+        description: "A number input"
+        required: true
+        type: number
+        default: 42
+
+jobs:
+  caller1:
+    uses: ./.github/workflows/workflow-2.yml
+    with:
+      input1: 12
+
+  caller2:
+    uses: ./.github/workflows/workflow-2.yml
+    with:
+      input1: ${{ inputs.input1 }}
