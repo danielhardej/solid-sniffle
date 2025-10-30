@@ -1,0 +1,19 @@
+name: Called Workflow
+
+on:
+  workflow_call:
+    inputs:
+      input1:
+        description: "A number input"
+        required: true
+        type: number
+        default: 42
+
+jobs:
+  callee:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Use the input
+        run: |
+          echo "The input value is ${{ inputs.input1 }}"
