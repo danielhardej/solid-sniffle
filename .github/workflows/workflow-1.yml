@@ -18,4 +18,4 @@ jobs:
   caller2:
     uses: ./.github/workflows/workflow-2.yml
     with:
-      input1: ${{ inputs.input1 }}
+      input1: ${{ fromJSON(inputs.input1) }}
