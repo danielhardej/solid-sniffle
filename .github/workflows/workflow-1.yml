@@ -1,4 +1,4 @@
-name: Main Workflow
+name: Caller
 
 on:
   workflow_dispatch:
@@ -6,16 +6,16 @@ on:
       input1:
         description: "A number input"
         required: true
-        type: string
-        default: "42"
+        type: number
+        default: 42
 
 jobs:
   caller1:
-    uses: ./.github/workflows/workflow-2.yml
+    uses: ./.github/workflows/callee.yml
     with:
       input1: 12
 
   caller2:
-    uses: ./.github/workflows/workflow-2.yml
+    uses: ./.github/workflows/callee.yml
     with:
       input1: ${{ inputs.input1 }}
