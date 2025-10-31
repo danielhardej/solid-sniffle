@@ -6,8 +6,7 @@ on:
       input1:
         description: "A number input"
         required: true
-        type: number
-        default: 42
+        default: "42"
 
 jobs:
   caller1:
