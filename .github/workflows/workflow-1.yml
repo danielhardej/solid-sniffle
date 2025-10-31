@@ -6,6 +6,7 @@ on:
       input1:
         description: "A number input"
         required: true
+        type: string
         default: "42"
 
 jobs:
